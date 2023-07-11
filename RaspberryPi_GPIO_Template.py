@@ -2,7 +2,15 @@
 import asyncio
 from aiogram import Bot, Dispatcher
 from datetime import datetime
+# import RPi.GPIO as GPIO
 
+
+# GPIO numbering according to GPIO numbering
+# GPIO.setmode(GPIO.BCM)
+
+# Declare GPIO as input
+# GPIO.setup(15, GPIO.IN)
+# GPIO.setup(16, GPIO.IN)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -26,6 +34,7 @@ async def send_message_on_condition():
         # GPIO input condition here
         user_input = input("Enter 'true' to send a message to the group: ")
 
+        # if GPIO.input(15) is 1
         if user_input.lower() == "true":
             # Add group id here
             group_id = -1001917264370
