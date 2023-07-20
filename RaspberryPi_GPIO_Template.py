@@ -16,16 +16,17 @@ dp = Dispatcher(bot)
 # Get current date and time
 current_time = datetime.now().time()
 
+# set maximum alarm messages
+max_messages = 3
+count_messages = 0
+
 
 async def send_message_to_group(group_id, message):
     # Function to send a message to the specified group
     await bot.send_message(chat_id=group_id, text=message)
 
 async def send_message_on_condition():
-    while True:
-        # GPIO input condition here
-        # user_input = input("Enter 'true' to send a message to the group: ")
-        
+    while message_count < max_messages:      
         # GPIO numbering according to GPIO numbering
         GPIO.setmode(GPIO.BCM)
 
@@ -33,7 +34,6 @@ async def send_message_on_condition():
         GPIO.setup(17, GPIO.IN)
 
         if GPIO.input(17) == 1:
-        # if user_input.lower() == "true":
             # Add group id here
             group_id = -1001917264370
 
