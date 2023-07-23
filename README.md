@@ -31,5 +31,5 @@ When using Raspberry Pi OS Desktop:
 - enter your token and group id
 - either run in thonny or create cronjob for your saved python file to make sure it runs again after any kind of reboot
 
-https://imgur.com/GDsC3Yt
-https://imgur.com/ar2ZVjn
+[Imgur](https://imgur.com/GDsC3Yt)
+[Imgur](https://imgur.com/ar2ZVjn)
