@@ -4,6 +4,9 @@
 
 ## Raspberry Pi OS auf SD-Karte
 `https://downloads.raspberrypi.org/imager/imager_latest.exe`
+https://imgur.com/mOwtRMF
+https://imgur.com/u0b1MSB
+https://imgur.com/DzVohgF
 
 ## Set up
 ```
@@ -27,3 +30,6 @@ When using Raspberry Pi OS Desktop:
 - install aiogram
 - enter your token and group id
 - either run in thonny or create cronjob for your saved python file to make sure it runs again after any kind of reboot
+
+https://imgur.com/GDsC3Yt
+https://imgur.com/ar2ZVjn
