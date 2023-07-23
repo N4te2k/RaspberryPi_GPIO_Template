@@ -1,10 +1,14 @@
 # RaspberryPi_GPIO_Template
 
+`https://electreeks.de/project/python-gpio-befehle-raspberry-pi/`
+
 ## Raspberry Pi OS auf SD-Karte
 `https://downloads.raspberrypi.org/imager/imager_latest.exe`
 
 ## Set up
-
+```
+pip install aiogram
+```
 ```
 # Create a bot instance
 bot = Bot(token='Your token goes here')
@@ -14,6 +18,12 @@ bot = Bot(token='Your token goes here')
 group_id = -123
 ```
 
-
-
-`https://electreeks.de/project/python-gpio-befehle-raspberry-pi/`
+## How to run
+When using Raspberry Pi OS Desktop:
+- launch your raspberry pi
+- set up raspberry pi
+- open thonny on raspberry pi
+- copy paste the code from github
+- install aiogram
+- enter your token and group id
+- either run in thonny or create cronjob for your saved python file to make sure it runs again after any kind of reboot
