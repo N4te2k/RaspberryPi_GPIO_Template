@@ -23,6 +23,7 @@ async def send_message_to_group(group_id, message):
     await bot.send_message(chat_id=group_id, text=message)
 
 async def send_message_on_condition():
+    global count_messages  # Use the global count_messages variable
     while count_messages < max_messages:      
         # GPIO numbering according to GPIO numbering
         GPIO.setmode(GPIO.BCM)
@@ -45,6 +46,9 @@ async def send_message_on_condition():
                 message = r"🚨 FFW EINSATZ! 🚨"  # Default message for other times
 
             await send_message_to_group(group_id, message)
+
+            # Increment the message count
+            count_messages += 1
 
         # Clean up GPIO resources
         GPIO.cleanup()
