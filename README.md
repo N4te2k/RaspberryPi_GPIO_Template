@@ -7,11 +7,14 @@
 https://downloads.raspberrypi.org/imager/imager_latest.exe
 https://imgur.com/mOwtRMF
 https://imgur.com/u0b1MSB
-https://imgur.com/DzVohgF```
+https://imgur.com/DzVohgF
+```
 
 ## Set up
-`https://imgur.com/GDsC3Yt`
-`https://imgur.com/ar2ZVjn`
+```
+https://imgur.com/GDsC3Yt
+https://imgur.com/ar2ZVjn
+```
 ```
 pip install aiogram
 ```
