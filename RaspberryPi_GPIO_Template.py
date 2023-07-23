@@ -13,9 +13,6 @@ bot = Bot(token='6032574865:AAH50bDupFM-WR3ztYIiTahciwExtMcFtkQ')
 # Create a dispatcher
 dp = Dispatcher(bot)
 
-# Get current date and time
-current_time = datetime.now().time()
-
 # set maximum alarm messages
 max_messages = 3
 count_messages = 0
@@ -26,7 +23,7 @@ async def send_message_to_group(group_id, message):
     await bot.send_message(chat_id=group_id, text=message)
 
 async def send_message_on_condition():
-    while message_count < max_messages:      
+    while count_messages < max_messages:      
         # GPIO numbering according to GPIO numbering
         GPIO.setmode(GPIO.BCM)
 
@@ -37,6 +34,9 @@ async def send_message_on_condition():
             # Add group id here
             group_id = -1001917264370
 
+            # Get current date and time on each iteration
+            current_time = datetime.now().time()
+
             # Check if it's Sunday and time is between 11:14 and 11:16
             if (datetime.now().weekday() == 6 and
                 datetime.strptime('11:14', '%H:%M').time() <= current_time <= datetime.strptime('11:16', '%H:%M').time()):
@@ -45,8 +45,9 @@ async def send_message_on_condition():
                 message = r"🚨 FFW EINSATZ! 🚨"  # Default message for other times
 
             await send_message_to_group(group_id, message)
-            
-            GPIO.cleanup()
+
+        # Clean up GPIO resources
+        GPIO.cleanup()
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
