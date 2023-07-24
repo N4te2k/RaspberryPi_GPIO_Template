@@ -8,7 +8,7 @@ import RPi.GPIO as GPIO
 logging.basicConfig(level=logging.INFO)
 
 # Create a bot instance
-bot = Bot(token='6032574865:AAH50bDupFM-WR3ztYIiTahciwExtMcFtkQ')
+bot = Bot(token='token')
 
 # Create a dispatcher
 dp = Dispatcher(bot)
@@ -33,7 +33,7 @@ async def send_message_on_condition():
 
         if GPIO.input(17) == 1:
             # Add group id here
-            group_id = -1001917264370
+            group_id = -123
 
             # Get current date and time on each iteration
             current_time = datetime.now().time()
