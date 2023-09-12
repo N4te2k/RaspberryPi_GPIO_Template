@@ -17,14 +17,12 @@ dp = Dispatcher(bot)
 max_messages = 3
 count_messages = 0
 
-
 async def send_message_to_group(group_id, message):
     # Function to send a message to the specified group
     await bot.send_message(chat_id=group_id, text=message)
 
 async def send_message_on_condition():
-    global count_messages  # Use the global count_messages variable
-    while count_messages < max_messages:      
+    while True:      
         # GPIO numbering according to GPIO numbering
         GPIO.setmode(GPIO.BCM)
 
@@ -32,6 +30,9 @@ async def send_message_on_condition():
         GPIO.setup(17, GPIO.IN)
 
         if GPIO.input(17) == 1:
+            # reset message count
+            count_messages = 0
+
             # Add group id here
             group_id = -123
 
@@ -45,10 +46,9 @@ async def send_message_on_condition():
             else:
                 message = r"🚨 FFW EINSATZ! 🚨"  # Default message for other times
 
-            await send_message_to_group(group_id, message)
-
-            # Increment the message count
-            count_messages += 1
+            while count_messages < max_messages:
+                await send_message_to_group(group_id, message)
+                count_messages =+ 1
 
         # Clean up GPIO resources
         GPIO.cleanup()
