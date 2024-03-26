@@ -37,7 +37,3 @@ When using Raspberry Pi OS Desktop:
 - install aiogram
 - enter your token and group id
 - either run in thonny or create cronjob for your saved python file to make sure it runs again after any kind of reboot
-
-
-https://www.unknowncheats.me/forum/valorant/584140-vanguard-spoofer-windows-reset.html
-https://www.unknowncheats.me/forum/valorant/589803-vanguard-spoofer-windows-reset-v2.html
